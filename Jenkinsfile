@@ -8,8 +8,12 @@ pipeline {
                 echo "${WORKSPACE}/Builds/${env.JOB_NAME}-${env.BUILD_NUMBER}"
                 echo "SCM Trigger test done!!"
                 slackSend color: '#BADA55', message: 'Hello, World!'
-                sh"chmod +x test.sh " 
-                sh "./test.sh"
+               
+                sh'''#!/bin/bash 
+                sudo -i
+                chmod +x test.sh 
+                sh ./test.sh
+                '''
                 
      
                 
