@@ -1,2 +1,2 @@
-sudo su 
+cd /var/lib/jenkins/sqlpackage
 sqlpackage
