@@ -9,7 +9,7 @@ pipeline {
                 echo "SCM Trigger test done!!"
                 slackSend color: '#BADA55', message: 'Hello, World!'
                 sh '''
-                sudo -i
+                
                 sqlpackage
                 
                 '''
