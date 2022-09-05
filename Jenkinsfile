@@ -12,7 +12,7 @@ pipeline {
                 sh'''#!/bin/bash 
                 cd /var/lib/jenkins/sqlpackage/
                 pwd
-                sqlpackage
+                /var/lib/jenkins/sqlpackage/sqlpackage
 
                 chmod +x test.sh 
                 sh ./test.sh
