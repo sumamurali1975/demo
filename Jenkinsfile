@@ -10,7 +10,9 @@ pipeline {
                 slackSend color: '#BADA55', message: 'Hello, World!'
                
                 sh'''#!/bin/bash 
-                sudo -i
+                cd /var/lib/jenkins/sqlpackage/
+                sqlpackage
+
                 chmod +x test.sh 
                 sh ./test.sh
                 '''
