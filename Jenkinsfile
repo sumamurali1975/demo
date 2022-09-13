@@ -16,5 +16,15 @@ pipeline {
                      
             }
         }
+        stage('Upload to AWS') {
+              steps {
+                  withAWS(region:'us-east-1',credentials:'arn:aws:iam::872161624847:user/Palavekari.Sumalatha@ibm.com') {
+                  sh 'echo "Uploading file S3 bucket"'
+                      s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'test.py', path:'dags/'bucket:'airflowtest-dag')
+')
+                  }
+              }
+         }
+        
     }
 }
